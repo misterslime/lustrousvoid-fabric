@@ -26,7 +26,7 @@ public abstract class MixinLevelRenderer {
 
 	@Shadow @Final private Minecraft minecraft;
 	@Shadow private int ticks;
-	@Shadow @Nullable private VertexBuffer starBuffer;
+	@Nullable private VertexBuffer endStarBuffer;
 	@Unique private boolean buildStars = true;
 	@Unique private float starFade = 1.0f;
 
@@ -67,17 +67,17 @@ public abstract class MixinLevelRenderer {
 			RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, starFade);
 
 			if (this.buildStars) {
-				this.starBuffer.close();
-				this.starBuffer = new VertexBuffer();
+				this.endStarBuffer.close();
+				this.endStarBuffer = new VertexBuffer();
 
 				this.buildStars(matrix4f3, bufferBuilder);
 				bufferBuilder.end();
 
-				this.starBuffer.upload(bufferBuilder);
+				this.endStarBuffer.upload(bufferBuilder);
 				this.buildStars = false;
 			}
 
-			this.starBuffer.drawWithShader(poseStack.last().pose(), matrix4f, GameRenderer.getPositionTexShader());
+			this.endStarBuffer.drawWithShader(poseStack.last().pose(), matrix4f, GameRenderer.getPositionTexShader());
 
 			runnable.run();
 			poseStack.popPose();
