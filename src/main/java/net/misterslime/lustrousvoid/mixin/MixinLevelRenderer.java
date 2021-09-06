@@ -7,8 +7,6 @@ import com.mojang.math.Matrix4f;
 import com.mojang.math.Vector3f;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.*;
-import net.minecraft.network.chat.ChatType;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.phys.Vec2;
@@ -121,7 +119,6 @@ public abstract class MixinLevelRenderer {
 				double u = Math.cos(s);
 
 				for(int v = 0; v < 4; ++v) {
-					// * g
 					double x = (double)((v & 2) - 1) * g;
 					double y = (double)((v + 1 & 2) - 1) * g;
 					double aa = x * u - y * t;
