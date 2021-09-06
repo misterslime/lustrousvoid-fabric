@@ -67,7 +67,7 @@ public abstract class MixinLevelRenderer {
 			RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, starFade);
 
 			if (this.buildStars || this.endStarBuffer == null) {
-				if (this.endStarBuffer == null) this.endStarBuffer.close();
+				if (this.endStarBuffer != null) this.endStarBuffer.close();
 				this.endStarBuffer = new VertexBuffer();
 
 				this.buildStars(matrix4f3, bufferBuilder);
