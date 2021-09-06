@@ -94,7 +94,7 @@ public abstract class MixinLevelRenderer {
 		Random random = new Random(this.minecraft.getSingleplayerServer().overworld().getSeed());
 		buffer.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_TEX);
 
-		for(int i = 0; i < random.nextInt(5000) + 10000; ++i) {
+		for(int i = 0; i < random.nextInt(2500) + 7500; ++i) {
 			double d = random.nextFloat() * 2.0F - 1.0F;
 			double e = random.nextFloat() * 2.0F - 1.0F;
 			double f = random.nextFloat() * 2.0F - 1.0F;
