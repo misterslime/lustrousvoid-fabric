@@ -9,8 +9,9 @@
     "misterslime"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://modrinth.com/mod/lustrous-void",
+    "sources": "https://github.com/misterslime/lustrousvoid-fabric",
+    "issues": "https://github.com/misterslime/lustrousvoid-fabric/issues"
   },
 
   "license": "CC0-1.0",
